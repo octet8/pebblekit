@@ -127,7 +127,7 @@ if __name__ == "__main__":
 
     SDK_ROOT = os.path.realpath(args.sdk_root)
     PROJECT_NAME = os.path.basename(args.project_name)
-    PROJECT_ROOT = os.path.join(os.getcwd(), PROJECT_NAME)
+    PROJECT_ROOT = os.path.join(os.getcwd(), args.project_name)
 
     SYMLINK_ONLY = args.symlink_only
 
@@ -137,4 +137,4 @@ if __name__ == "__main__":
         print "\nCreating symlinks here:\n\n\t", PROJECT_ROOT
         create_symlinks(PROJECT_ROOT, SDK_ROOT)
 
-    print "\nNow run:\n\n\tcd %s\n\t./waf configure\n\t./waf build\n" % (PROJECT_NAME)
+    print "\nNow run:\n\n\tcd %s\n\t./waf configure\n\t./waf build\n" % (args.project_name)
