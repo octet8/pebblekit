@@ -126,7 +126,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     SDK_ROOT = os.path.realpath(args.sdk_root)
-    PROJECT_NAME = args.project_name
+    PROJECT_NAME = os.path.basename(args.project_name)
     PROJECT_ROOT = os.path.join(os.getcwd(), PROJECT_NAME)
 
     SYMLINK_ONLY = args.symlink_only
